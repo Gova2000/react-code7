@@ -1,22 +1,24 @@
-// Write your code here
-
 import './index.css'
 
-const Cash = props => {
-  const {Details, minus} = props
-  const {value} = Details
+const DenominationItem = props => {
+  const {denominationDetails, updateBalance} = props
+  const {value} = denominationDetails
 
-  const Mins = () => {
-    minus(value)
+  const onClickDenomination = () => {
+    updateBalance(value)
   }
 
   return (
-    <li>
-      <button type="button" onClick={Mins}>
+    <li className="denomination-item">
+      <button
+        type="button"
+        className="denomination-button"
+        onClick={onClickDenomination}
+      >
         {value}
       </button>
     </li>
   )
 }
 
-export default Cash
+export default DenominationItem
